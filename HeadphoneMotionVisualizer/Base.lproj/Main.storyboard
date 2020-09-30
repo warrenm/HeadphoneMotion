@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Headphone Pose View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="HeadphonePoseViewController" customModule="HeadphoneMotionVisualizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y75-SO-3vY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecZ-Ac-S3F">
+                                <rect key="frame" x="20" y="748" width="125" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="70c-pv-km4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ezN-dr-tAe"/>
+                                    <constraint firstAttribute="height" constant="30" id="jtc-ZF-nC0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal" title="Set Reference">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="referenceFrameButtonWasTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="grE-qJ-nkC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fG-Vp-SZV">
+                                <rect key="frame" x="206" y="751" width="149" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="1gg-82-DTZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="Yv7-BP-mfe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <state key="normal" title="Start Motion Updates">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startMotionTrackingButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rhb-d2-IQi"/>
+                                </connections>
+                            </button>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnz-co-WHz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </sceneKitView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="efo-5F-r6B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ecZ-Ac-S3F" firstAttribute="leading" secondItem="efo-5F-r6B" secondAttribute="leading" constant="20" id="9TW-MB-IND"/>
+                            <constraint firstItem="ecZ-Ac-S3F" firstAttribute="bottom" secondItem="efo-5F-r6B" secondAttribute="bottom" id="PtO-mQ-0Ux"/>
+                            <constraint firstItem="5fG-Vp-SZV" firstAttribute="bottom" secondItem="efo-5F-r6B" secondAttribute="bottom" constant="3" id="h5f-YY-hjz"/>
+                            <constraint firstItem="efo-5F-r6B" firstAttribute="trailing" secondItem="5fG-Vp-SZV" secondAttribute="trailing" constant="20" id="lnh-oC-zYK"/>
+                            <constraint firstItem="5fG-Vp-SZV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ecZ-Ac-S3F" secondAttribute="trailing" priority="749" constant="20" id="uAJ-lY-NKW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="motionButton" destination="5fG-Vp-SZV" id="WB5-Yh-lrG"/>
+                        <outlet property="referenceButton" destination="ecZ-Ac-S3F" id="If0-v4-HBE"/>
+                        <outlet property="sceneView" destination="Hnz-co-WHz" id="iBO-X3-y61"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.8" y="120.44334975369459"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

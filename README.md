@@ -1,2 +1,3 @@
-# HeadphoneMotion
-A demonstration of the CMHeadphoneMotionManager API
+# Headphone Motion
+
+A demonstration of the CMHeadphoneMotionManager API, introduced in iOS 14.
